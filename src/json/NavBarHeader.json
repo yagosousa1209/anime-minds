@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Início",
+        "path": "/",
+        "id": 1
+    },
+    {
+        "name": "Postagens",
+        "path": "/postagens",
+        "id": 2
+    },
+    {
+        "name": "Sobre Nós",
+        "path": "/sobrenos",
+        "id": 3
+    }
+]
