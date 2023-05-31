@@ -29,6 +29,9 @@ module.exports = {
       'xl': '1440px',
       '2xl': '1920px',
     },
+    maxWidth: {
+      'maxScreen': '1920px'
+    }
   },
   plugins: [],
 }
