@@ -2,6 +2,7 @@ import CardPost from "components/CardPost";
 import AsideHome from "components/AsideHome";
 import posts from 'json/posts.json';
 import { Link } from "react-router-dom";
+import Carousel from "components/Carousel";
 
 export default function MainHome() {
     const recentPosts = posts.sort((a, b) => {
@@ -14,6 +15,9 @@ export default function MainHome() {
     return (
         <div className="flex w-full gap-8 justify-center px-4 md:px-20 lg:px-[120px] xl:px-40 2xl:px-60 max-w-maxScreen">
             <main className="px-5 py-20 text-letter_primary md:w-2/3 w-full">
+                <section className="mb-5">
+                    <Carousel posts={recentPosts} />
+                </section>
                 <h2 className="font-bold text-4xl mb-5 border-b leading-10 pb-3">Últimas postagens</h2>
                 <section className="grid gap-5 grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3">
                     {maxPost.map(post => {

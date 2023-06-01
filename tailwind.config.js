@@ -30,7 +30,8 @@ module.exports = {
       '2xl': '1920px',
     },
     maxWidth: {
-      'maxScreen': '1920px'
+      'maxScreen': '1920px',
+      'maxW_Card': '300px'
     }
   },
   plugins: [],

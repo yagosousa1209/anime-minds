@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function AsideHome({ posts }) {
     const postsRead = posts.map(e => e);
-    const postsFilter = postsRead.filter(e => e.launch === true)
+    const postsFilter = postsRead.filter(e => e.category === 'launch')
 
     return (
         <aside className="w-1/3 hidden md:flex flex-col pl-10 mt-5 text-letter_primary">
