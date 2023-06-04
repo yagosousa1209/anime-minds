@@ -5,6 +5,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import './Carousel.css'
+import { Link } from 'react-router-dom';
 export default function Carousel({ posts }) {
     const postsRead = posts.map(e => e);
     const postsFilter = postsRead.filter(e => e.category === 'notice')
@@ -15,19 +16,21 @@ export default function Carousel({ posts }) {
             spaceBetween={50}
             slidesPerView={1}
             loop={true}
-            autoplay={{delay: 5000, disableOnInteraction:false }}
+            autoplay={{ delay: 5000, disableOnInteraction: false }}
             navigation
             pagination={{ clickable: true }}
         >
             {postsFilter.map(post => {
                 return (
                     <SwiperSlide key={post.id}>
-                        <CardPost
-                            image={post.image}
-                            alt={post.alt}
-                            typePost={'notice'}
-                            title={post.title}
-                        />
+                        <Link to={`/postagem/${post.id}`}>
+                            <CardPost
+                                image={post.image}
+                                alt={post.alt}
+                                typePost={'notice'}
+                                title={post.title}
+                            />
+                        </Link>
                     </SwiperSlide>)
             })}
         </Swiper>

@@ -2,6 +2,7 @@ import { FiFilter } from 'react-icons/fi'
 import posts from 'json/posts.json'
 import CardPost from 'components/CardPost'
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 export default function Posts() {
     const [filterPosts, setFilterPosts] = useState('')
@@ -12,8 +13,8 @@ export default function Posts() {
         return dateB - dateA
     })
 
-    const funFilterPosts = filterPosts 
-    ? recentPosts.filter(post => post.category === filterPosts) : recentPosts
+    const funFilterPosts = filterPosts
+        ? recentPosts.filter(post => post.category === filterPosts) : recentPosts
 
     return (
         <main className="bg-background text-letter_primary flex flex-col items-center">
@@ -34,16 +35,17 @@ export default function Posts() {
                 <section className='grid gap-5 my-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4'>
                     {funFilterPosts.map(post => {
                         return (
-                            <CardPost
-                                title={post.title}
-                                image={post.image}
-                                alt={post.alt}
-                                date={post.datePost}
-                                dateLaunch={post.dateLaunch}
-                                key={post.id}
-                                typePost={''}
-                                text={post.text}
-                            />
+                            <Link to={`/postagem/${post.id}`} key={post.id}>
+                                <CardPost
+                                    title={post.title}
+                                    image={post.image}
+                                    alt={post.alt}
+                                    date={post.datePost}
+                                    dateLaunch={post.dateLaunch}
+                                    typePost={''}
+                                    text={post.text}
+                                />
+                            </Link>
                         )
                     })}
                 </section>

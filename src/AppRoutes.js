@@ -3,6 +3,7 @@ import Header from "components/Header";
 import AboutUs from "pages/AboutUs";
 import Error from "pages/Error";
 import Home from "pages/Home";
+import Post from "pages/Post";
 import Posts from "pages/posts";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
@@ -15,6 +16,7 @@ export default function AppRoutes() {
         <Route path="/" element={<Home />} />
         <Route path="/sobrenos" element={<AboutUs />} />
         <Route path="/postagens" element={<Posts />} />
+        <Route path="/postagem/:id" element={<Post />} />
 
         <Route path="*" element={<Error />} />
       </Routes>

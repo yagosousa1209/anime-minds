@@ -1,10 +1,16 @@
 import logo from 'assets/img/logoAnimeMinds.png'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { GiNotebook } from 'react-icons/gi'
 import { BsInfoCircle } from 'react-icons/bs'
 import { AiFillHome } from 'react-icons/ai'
 
 export default function Header() {
+    const location = useLocation()
+
+    if (location.key === 'default') {
+        return null
+    }
+
     return (
         <header className='bg-primary flex flex-col items-center text-letter_primary py-5'>
             <Link className='w-48 md:w-1/4 2xl:w-1/5 lg:w-1/3' to='/'><img src={logo} alt="Logo Anime Minds" /></Link>

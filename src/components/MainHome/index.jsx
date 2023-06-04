@@ -22,16 +22,18 @@ export default function MainHome() {
                 <section className="grid gap-5 grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3">
                     {maxPost.map(post => {
                         return (
-                            <CardPost
-                                title={post.title}
-                                image={post.image}
-                                alt={post.alt}
-                                date={post.datePost}
-                                dateLaunch={post.dateLaunch}
-                                key={post.id}
-                                typePost={''}
-                                text={post.text}
-                            />
+                            <Link to={`/postagem/${post.id}`} key={post.id}>
+                                <CardPost
+                                    title={post.title}
+                                    image={post.image}
+                                    alt={post.alt}
+                                    date={post.datePost}
+                                    dateLaunch={post.dateLaunch}
+                                    key={post.id}
+                                    typePost={''}
+                                    text={post.text}
+                                />
+                            </Link>
                         )
                     })}
                 </section>

@@ -1,6 +1,14 @@
 import { FaFacebookF, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa'
+import { useLocation } from 'react-router-dom'
 
 export default function Footer(){
+    const location = useLocation()
+
+    if (location.key === 'default') {
+        return null
+    }
+
+
     return (
         <footer className="bg-background/95 flex flex-col items-center">
             <section className='flex text-primary gap-5 py-5 text-2xl'>

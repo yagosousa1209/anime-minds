@@ -11,14 +11,15 @@ export default function AsideHome({ posts }) {
             <section className="flex flex-col gap-4 divide-y">
                 {postsFilter.map(post => {
                     return (
-                        <CardPost
-                            image={post.image}
-                            alt={post.alt}
-                            title={post.title}
-                            dateLaunch={post.dateLaunch}
-                            key={post.id}
-                            typePost={'launch'}
-                        />
+                        <Link to={`/postagem/${post.id}`} key={post.id}>
+                            <CardPost
+                                image={post.image}
+                                alt={post.alt}
+                                title={post.title}
+                                dateLaunch={post.dateLaunch}
+                                typePost={'launch'}
+                            />
+                        </Link>
                     )
                 })}
             </section>
