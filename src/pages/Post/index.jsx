@@ -10,18 +10,20 @@ export default function Post() {
         return post.id === idPage.id
     })
 
-    if(!postSelect) {
+    if (!postSelect) {
         return <Error />
     }
 
     return (
-        <main>
-            <h1>{postSelect.title}</h1>
-            <section>
-                <ReactMarkdown>
-                    
-                </ReactMarkdown>
-            </section>
+        <main className="bg-background text-letter_primary flex flex-col items-center">
+            <div className='px-4 md:px-20 lg:px-[120px] xl:px-40 2xl:px-60 max-w-maxScreen w-full'>
+                <h1 className='text-5xl font-bold leading-tight mb-10'>{postSelect.title.toUpperCase()}</h1>
+                <section>
+                    <ReactMarkdown className='flex flex-col items-center gap-5 mb-10'>
+                        {postSelect.text}
+                    </ReactMarkdown>
+                </section>
+            </div>
         </main>
     )
 }
